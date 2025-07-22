@@ -95,3 +95,52 @@ print(sriram.bed_time())
 print(sriram.rice_flour())
 print(sriram.bed_time())
         
+class extra_work:
+    def __init__(self):
+        self.called = False
+    
+    def aptitue(self):
+        self.called = True
+        return "study aptitue"
+    
+    def verbal(self):
+        if self.called:
+            return "study verbal"
+        else:
+            return "first study aptitue"
+    def logical(self):
+        if self.called:
+            return "study logical reasoning"
+        else:
+            return "study aptitue first"
+
+name = extra_work()
+print(name.logical())
+print(name.aptitue())
+print(name.verbal())
+        
+
+class college:
+    def __init__(self):
+        self.called = False 
+    
+    def college_bus(self):
+        self.called = True
+        return "get into clg bus"
+        
+    def breakfast_at_clg(self):
+        if self.called:
+            return "go have your breakfast"
+        else:
+            return "first go to college through bus"
+    def attend_clg_hours(self):
+        if self.called:
+            return "attend clg classes"
+        else:
+            return "first go to clg"
+
+college_student = college()
+print(college_student.breakfast_at_clg())
+print(college_student.college_bus())
+print(college_student.attend_clg_hours())
+            
