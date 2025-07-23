@@ -2,23 +2,32 @@
 class mrng_routine:
     def __init__(self):
         self.fun_called = False
+        self.called = False
     def brushing(self):
         self.fun_called = True
         return "brush your teeth" 
     def face_wash(self):
+        self.called = True
         if self.fun_called:
             return "wash your face"
         else:
             return "brush your teeth first"
     def coffee_drink(self):
-        if self.fun_called:
+        if self.fun_called and self.called:
             return "drink coffee"
         else:
-            return "brush your teeth first"
-
+            if self.fun_called:
+                return "wash your face and drink coffee"
+            if self.called:
+                return "brush your teeth then drink coffee"
+            else:
+                return "brush your teeth first"
+            
 nithi = mrng_routine()
 print(nithi.face_wash())
+print(nithi.coffee_drink())
 print(nithi.brushing())
+print(nithi.face_wash())
 print(nithi.coffee_drink())
 
 class afternoon_routine:
@@ -98,21 +107,28 @@ print(sriram.bed_time())
 class extra_work:
     def __init__(self):
         self.called = False
+        self.has_called = False
     
     def aptitue(self):
         self.called = True
         return "study aptitue"
     
     def verbal(self):
+        self.has_called = True
         if self.called:
             return "study verbal"
         else:
             return "first study aptitue"
     def logical(self):
-        if self.called:
+        if self.called and self.has_called:
             return "study logical reasoning"
         else:
-            return "study aptitue first"
+            if self.called:
+                return "study verbal first then study logical"
+            if self.has_called:
+                return "study aptitue"
+            else:
+                return "study aptitue and verbal first then study logical"
 
 name = extra_work()
 print(name.logical())
@@ -123,6 +139,7 @@ print(name.verbal())
 class college:
     def __init__(self):
         self.called = False 
+        self.had_called = False
     
     def college_bus(self):
         self.called = True
@@ -134,10 +151,15 @@ class college:
         else:
             return "first go to college through bus"
     def attend_clg_hours(self):
-        if self.called:
+        if self.called and self.had_called:
             return "attend clg classes"
         else:
-            return "first go to clg"
+            if self.called:
+                return "have breakfast first then attend classes"
+            if self.had_called:
+                return "first go to college through bus"
+            else:
+                return "first go to clg and have breakfast then attend classes"
 
 college_student = college()
 print(college_student.breakfast_at_clg())
