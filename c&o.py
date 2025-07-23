@@ -143,4 +143,21 @@ college_student = college()
 print(college_student.breakfast_at_clg())
 print(college_student.college_bus())
 print(college_student.attend_clg_hours())
+
+class stock:
+    def __init__(self):
+        self.called = False
+    
+    def nifty(self):
+        self.called = True 
+        return "stock price is 23"
+    
+    def sensex(self):
+        if self.called:
+            return "market is going down"
+        else:
+            return "market is high"
+            
+stock_market = stock()
+print(stock_market.nifty())
             
