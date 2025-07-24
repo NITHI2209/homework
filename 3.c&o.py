@@ -4,7 +4,7 @@ class information_technology:
         self.called = False
         self.has_called = False
     
-    def staff_count(self,no_of_employee):
+    def staff_count(self,no_of_employee,):
         self.called = True
         return f"Number of employee = {no_of_employee}"
     
@@ -15,9 +15,9 @@ class information_technology:
         else:
             return  "First update the staff count"
     
-    def solution(self,solution):
+    def solution(self,solution,policy,action):
         if self.called and self.has_called:
-            return f"solution to solve problem = {solution}"
+            return f"solution to solve problem : {solution} , policy:{policy},action:{action}"
         else:
             if self.called:
                 return "First address the problem"
@@ -29,4 +29,5 @@ class information_technology:
 employee_info = information_technology()
 print(employee_info.staff_count(100))
 print(employee_info.majority_dept("IT","Because lack of facility in other dept"))
-print(employee_info.solution("Improve  work environment and work life balance"))
+print(employee_info.solution("Improve  work environment and work life balance","Compliance and rules","Implement the policy"))
+
