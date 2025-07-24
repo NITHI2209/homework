@@ -1,5 +1,4 @@
 #23/07/2025
-
 class gym:
     def __init__(self):
         self.called = False
@@ -16,9 +15,9 @@ class gym:
         else:
             return "Do warmup first"
     
-    def shoulder(self,exercise,time_shoulder):
+    def shoulder(self,exercise,time_shoulder,total_workout):
         if self.called and self.has_called:
-            return f"exerice:{exercise},time for shoulder:{time_shoulder}"
+            return f"exerice:{exercise},time for shoulder:{time_shoulder},total workout:{total_workout}"
         else:
             if self.called:
                 return "Do chest workout now"
@@ -30,4 +29,4 @@ class gym:
 gymrat = gym()
 print(gymrat.warmupp("pushups and pullups","5mins"))
 print(gymrat.chest_workout("dumbell press","5 mins"))
-print(gymrat.shoulder("Front raise","10 mins"))
+print(gymrat.shoulder("Front raise","10 mins","1hr"))
